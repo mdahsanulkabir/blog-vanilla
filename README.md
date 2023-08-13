@@ -1,34 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Blog
 
-## Getting Started
+## Preface
 
-First, run the development server:
+I have started my web development journey since beginning of January 2022. Since then I have learnt the fundamentals of HTML, CSS, Javascript, React and some other libraries. But after one and half year. I am still not confident about what I have learnt. Sometimes, I forget basics. The main reason behind this is that I guess the course I have taken during the first half of 2022 was to fast and I had a day job to do. So, in combination, I coutld not got enough time to practice. Fortunately, I had previous experience in C/C++/C#/Python programming which helped me to instantly understand what the Javascript code is trying to do. But due to lack of practice and right path, I think I am lost. For this reason, I have decided to re-start my journey and go with proper learnnig path.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To record my new journey, I have decided to log it in this blog project starting from HTML on August 13, 2023.
