@@ -3,6 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <style>
+      aside {
+        width: 40%;
+        padding-left: 0.5rem;
+        margin-left: 0.5rem;
+        float: right;
+        box-shadow: inset 5px 0 5px -5px #29627e;
+        font-style: italic;
+        color: #29627e;
+      }
+
+      aside > p {
+        margin: 0.5rem;
+      }
+
+      .logo {
+        background: left / cover url('https://interactive-examples.mdn.mozilla.net/media/examples/puppy-header-logo.jpg');
+        display: flex;
+        height: 120px;
+        align-items: center;
+        justify-content: center;
+        font:
+          bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script',
+          fantasy;
+        color: #ff0083;
+        text-shadow: #000 2px 2px 0.2rem;
+      }
+
+      header > h1 {
+        margin-bottom: 0;
+      }
+
+      header > time {
+        font: italic 0.7rem sans-serif;
+      }
+
+    </style>
     <title>Document</title>
   </head>
   <body>
@@ -42,5 +83,401 @@
         </li>
       </ol>
     </section>
+
+    <section>
+      <h2>Text specific elements</h2>
+      <p>To markup the texts we have various tags which has specific usage.</p>
+      <h3>Heading tags : &lt;h1&gt;&lt;/h1&gt; - &lt;h6&gt;&lt;/h6&gt;</h3>
+      <p>
+        For creating headings, we have 6 tags as &lt;h1&gt;, &lt;h2&gt;,
+        &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;,
+      </p>
+      <p>By default, all headings are block-level elements.</p>
+      <p>Below are some examples of heading tags</p>
+      <div>
+        <!-- <h1>I am heading 1</h1> -->
+        <h1 style="font-size: 2rem">I am heading 1</h1>
+        <h2>I am heading 2</h2>
+        <h3>I am heading 3</h3>
+        <h4>I am heading 4</h4>
+        <h5>I am heading 5</h5>
+        <h6>I am heading 6</h6>
+        <pre><code class="language-html"> &lt;!-- Heading Code --&gt;
+
+&lt;h1>I am heading 1&lt;/h1>
+&lt;h2>I am heading 2&lt;/h2>
+&lt;h3>I am heading 3&lt;/h3>
+&lt;h4>I am heading 4&lt;/h4>
+&lt;h5>I am heading 5&lt;/h5>
+&lt;h6>I am heading 6&lt;/h6>
+            </code></pre>
+      </div>
+      <h3>Paragraph : &lt;p&gt;&lt;/p&gt;</h3>
+      <p>
+        Paragraphs are used to represent a block of text separated from adjacent
+        blocks.
+      </p>
+      <p>Paragaphs are by default block-level elements.</p>
+      <pre><code class="language-html">&lt;p>This is a paragraph&lt;/p></code></pre>
+      <h3>Horizontal rule : &lt;hr></h3>
+      <p>
+        Generally &lt;hr&lt; elements represent a thematic break between
+        paragraph-level elements.
+      </p>
+      <div style="width: 50%; border: 1px solid black">
+        <p>Example</p>
+        <p>first paragraph</p>
+        <hr />
+        <p>second paragraph</p>
+        <pre><code class="language-html">
+            &lt;p>first paragraph &lt;/p>
+            &lt;hr>
+            &lt;p>second paragraph &lt;/p>
+        </code></pre>
+      </div>
+      <h3>Line break : &lt;br></h3>
+      <p>Line breaks, &lt;br> are used to skip to the next line.</p>
+      <pre><code class="language-html">
+            &lt;p>first paragraph 
+                &lt;br>...Hello There
+                &lt;br>...How are you?
+            &lt;/p>
+        </code></pre>
+      <p>results</p>
+      <p>first paragraph <br />...Hello There <br />...How are you?</p>
+      <h3>Emphasize : &lt;em>&lt;/em></h3>
+      <p>
+        Emphasize element used to emphasize any text. It makes the text italic.
+        It is a inline-level element.
+      </p>
+      <pre><code class="language-html">&lt;p>I am &lt;em>very&lt;/em> excited to learn html.&lt;/p></code></pre>
+      <p>I am <em>very</em> excited to learn html.</p>
+
+      <h3>Strong : &lt;strong>&lt;/strong></h3>
+      <p>
+        Emphasize element used to emphasize any text. It makes the text little
+        bold. It is a inline-level element.
+      </p>
+      <pre><code class="language-html">&lt;p>I am &lt;strong>very&lt;/strong> excited to learn html.&lt;/p></code></pre>
+      <p>I am <strong>very</strong> excited to learn html.</p>
+      <h3>Abbreviation Element : &lt;abbr></h3>
+      <p>
+        These elements are used to express the abbreviation. For the first time
+        use of abbreviation we need to provide full expansion. Generally only
+        using &lt;abbr> alone cannot support the purpose. We need to provide
+        'title' attribute with &lt;abbr> to express the full expansion as a
+        tooltip. The abbreviated text by default rendered with dooted underline.
+      </p>
+      <p>
+        A good documentation of html can be found at
+        <abbr title="Mozilla Developer Network">MDN</abbr>
+      </p>
+      <h3>Address : &lt;address></h3>
+      <p>This tag has semantic meaning. It represents an address.</p>
+      <address>
+        You may also want to visit us:<br />
+        Mozilla Foundation<br />
+        331 E Evelyn Ave<br />
+        Mountain View, CA 94041<br />
+        USA
+      </address>
+      <h3>Bold : &lt;b></h3>
+      <p>
+        It's an old element which was used to make the text bold. Now we don't
+        use it. Rather we use font-weight css property to make the text appear
+        bold.
+      </p>
+      <h2>List specific elements</h2>
+      <h3>List Items element : &lt;li></h3>
+      <p>
+        This element represents an item in a list. This element must be wrapped
+        with parent element: an ordered list, an unordered list or a menu.
+      </p>
+      <p>
+        We will see the usage of &lt;li> in these three elements. It can accept
+        two attributes named value and type.
+      </p>
+      <p>There are two types of lists.</p>
+      <ol>
+        <li>Ordered list</li>
+        <li>Unordered list</li>
+      </ol>
+
+      <h3>Ordered List : &lt;ol></h3>
+      <p>
+        We need ordered list when we like to make the list of the items in order
+        (normal or reverse)
+      </p>
+      <p>Below is an example.</p>
+      <pre><code class="language-html">
+        &lt;ol>
+            &lt;li>Mix flour, baking powder, sugar, and salt.&lt;/li>
+            &lt;li>In another bowl, mix eggs, milk, and oil.&lt;/li>
+            &lt;li>Stir both mixtures together.&lt;/li>
+            &lt;li>Fill muffin tray 3/4 full.&lt;/li>
+            &lt;li>Bake for 20 minutes.&lt;/li>
+        &lt;/ol>
+      </code></pre>
+      <p>Output -</p>
+      <ol>
+        <li>Mix flour, baking powder, sugar, and salt.</li>
+        <li>In another bowl, mix eggs, milk, and oil.</li>
+        <li>Stir both mixtures together.</li>
+        <li>Fill muffin tray 3/4 full.</li>
+        <li>Bake for 20 minutes.</li>
+      </ol>
+      <p>
+        Apart from global attributes, ordered list accepts three more attributes
+        named <em>reversed, start, type</em>
+      </p>
+
+      <h3>Unordered List : &lt;ul></h3>
+      <p>We use unorders list while don't need any order.</p>
+      <p>Below is an example.</p>
+      <pre><code class="language-html">
+        &lt;ul>
+            &lt;li>first item&lt;/li>
+            &lt;li>second item&lt;/li>
+            &lt;li>third item&lt;/li>
+        &lt;/ul>
+      </code></pre>
+      <p>Output -</p>
+      <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+      </ul>
+      <p>
+        Apart from global attributes, unordered list accepts two more attributes
+        named <em>compact & type</em>. But we will rather use css to alter the
+        compact and type properties
+      </p>
+    </section>
+    <h4>
+      Named Characters
+      <a
+        href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references"
+        >list.</a
+      >
+    </h4>
+    <h4>Comment : &lt;!-- --&gt;</h4>
+    <p>
+      Comments are used to write some notes which are not rendered and fully
+      ignored by the renderer. But we can see the comment in dev tool.
+    </p>
+    <h3>
+      Description List : &lt;dl>, Description Term : &lt;dt> & Description
+      Detail : &lt;dd>
+    </h3>
+    <p>
+      Mentioned three tags are associated with description lists. Description
+      list wraps a list of group of terms and their descriptions.
+    </p>
+    <pre><code>Example
+        &lt;p>Cryptids of Cornwall:&lt;/p>
+
+        &lt;dl>
+        &lt;dt>Beast of Bodmin&lt;/dt>
+        &lt;dd>A large feline inhabiting Bodmin Moor.&lt;/dd>
+
+        &lt;dt>Morgawr&lt;/dt>
+        &lt;dd>A sea serpent.&lt;/dd>
+
+        &lt;dt>Owlman&lt;/dt>
+        &lt;dd>A giant owl-like creature.&lt;/dd>
+        &lt;/dl>
+    </code></pre>
+    <p>Results</p>
+    <p>Cryptids of Cornwall:</p>
+    
+    <dl>
+    <dt>Beast of Bodmin</dt>
+    <dd>A large feline inhabiting Bodmin Moor.</dd>
+
+    <dt>Morgawr</dt>
+    <dd>A sea serpent.</dd>
+
+    <dt>Owlman</dt>
+    <dd>A giant owl-like creature.</dd>
+    </dl>
+
+    <h2>Links </h2>
+    <h3>External resource link : &lt;link></h3>
+    <p>We use this external resource link element to link with stylesheets and any other resources not present in the current webpage displayed. This external link can be linked with another folder in our app structure, or our hosting server or any other third party server. These don't render in webpage.</p>
+    <pre><code class="language-html">&lt;link href="/media/examples/link-element-example.css" rel="stylesheet" /></code></pre>
+    
+    <h3>Anchor element : &lt;a></h3>
+    <p>The anhor element with its href (hyperlink reference), creates a hyperlink to web pages, files, email addresses, location in same page, or anywhere else a URL can address.</p>
+    <p>The <em>href</em> provides the location of the associated anchor.</p>
+    <pre><code class="language-html">Example
+        &lt;a href="https://www.google.com">Google Website</a>
+    </code></pre>
+    <p>Results : </p>
+    <a href="https://www.google.com">Google Website</a>
+    <p>Color of the content represents if the link is not visited, visited or active</p>
+    <p>Above is an example of absolute refrence. We can use relative reference in our server.</p>
+    <pre><code class="language-html">Example
+        &lt;a href="./index.html">Home Page</a>
+    </code></pre>
+    <p>Results : </p>
+    <a href="./index.html">Home Page</a>
+
+    <h4>Other usage</h4>
+    <p>Download</p>
+    <pre><code>Example: we need to provide a 'download' attribute in anchor element
+        &lt;li>Download a &lt;a href="link-of-the-file" download>file&lt;/a>&lt;/li>
+    </code></pre>
+
+    <p>Send email</p>
+    <pre><code>Example: we need to provide a email address in 'href' attribute.
+        &lt;a href="mailto:ahsan@ahsanulkabir.dev">Send email to Ahsan&lt;/a>
+    </code></pre>
+
+    <p>Call </p>
+    <pre><code>Example: we need to provide a phone number in 'href' attribute.
+        &lt;a href="tel:+49.157.0156">+49 157 0156&lt;/a>
+        &lt;a href="tel:+1(800)555-0123">(800) 555-0123&lt;/a>
+    </code></pre>
+
+    <p>Open linked page in new tab.</p>
+    <pre><code>Example: we need to provide '_blank' as the value of 'target' attribute.
+      &lt;a target="_blank" href="https://www.wikipedia.org">
+        Wikipedia (opens in new tab)
+      &lt;/a>
+    </code></pre>
+    
+    
+
+    <br><br><br>
+    <hr>
+    <p>August 16, 2023</p>
+    <h2>Sectioning Content</h2>
+    <p>Sectioning contents used everywhere flow content is expected. Sectioning elements create a section that defines the scope of &lt;header> element, &lt;footer> elements and heading contents (h1 --- h6 & hgroup)</p>
+    <p>Elements like &lt;article>, &lt;aside>, &lt;nav> and &lt;section> falls under sectioning category.</p>
+    <h3>Article : &lt;article></h3>
+    <p>Articles are self-contained composition in a document, page, application, or site, which is intended to be independently distributatble. Examples - a forum post, a magazine or newspaper article, a blog entry, a product card, a user-submitted comment, an interactive widget, or any other independent content.</p>
+
+    <h3>Generic Section Element : &lt;section></h3>
+    <p>Section element does not have a more specific semantic element to represent it. It is used to represent generic standalone section of a document. <strong>Sections should always have a heading (few exceptions are there).</strong></p>
+
+    <h3>Navigation section element : &lt;nav></h3>
+    <p>The &lt;nav> HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.</p>
+    <pre><code class="language-html">Example:
+      &lt;nav>
+        &lt;ul>
+          &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/nav>
+    </code></pre>
+    <p>Result:
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </p>
+
+    <h3>Aside : &lt;aside></h3>
+    <p>Aside elements represents a portion of a document whose content is indirectly related with the document's main content.Asides are used generally as sidebars or call-out boxes.</p>
+    <pre><code class="language-html">Example
+      <p>
+        Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval
+        and adult forms.
+      </p>
+      
+      <aside>
+        <p>The Rough-skinned Newt defends itself with a deadly neurotoxin.</p>
+      </aside>
+      
+      <p>
+        Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the
+        Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and
+        other small creatures.
+      </p>
+      
+    </code></pre>
+
+    <p>result:</p>
+    <p>
+      Salamanders are a group of amphibians with a lizard-like appearance, including short legs and a tail in both larval
+      and adult forms.
+    </p>
+    
+    <aside>
+      <p>The Rough-skinned Newt defends itself with a deadly neurotoxin.</p>
+    </aside>
+    
+    <p>
+      Several species of salamander inhabit the temperate rainforest of the Pacific Northwest, including the Ensatina, the
+      Northwestern Salamander and the Rough-skinned Newt. Most salamanders are nocturnal, and hunt for insects, worms and
+      other small creatures.
+    </p>
+
+    <h3>Header element : &lt;header></h3>
+    <p>The &lt;header> HTML element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.</p>
+    <pre><code class="language-html">Example:
+      <header>
+        <a class="logo" href="#">Cute Puppies Express!</a>
+      </header>
+      
+      <article>
+        <header>
+          <h1>Beagles</h1>
+          <time>08.12.2014</time>
+        </header>
+        <p>I love beagles <em>so</em> much! Like, really, a lot. They’re adorable and their ears are so, so snuggly soft!</p>
+      </article>
+    </code></pre>
+    <p>Result</p>
+    <header>
+      <a class="logo" href="#">Cute Puppies Express!</a>
+    </header>
+    
+    <article>
+      <header>
+        <h1>Beagles</h1>
+        <time>08.12.2014</time>
+      </header>
+      <p>I love beagles <em>so</em> much! Like, really, a lot. They’re adorable and their ears are so, so snuggly soft!</p>
+    </article>
+    
+
+    <h3>Image element : &lt;img></h3>
+    <p>The &lt;img> element embdeds an image into the document.</p>
+    <pre><code class="language-html">Example:
+      &lt;img src="./assets/images/orange.jpg" alt="Picture of a sliced orange">
+    </code></pre>
+    <p>Results:</p>
+    <img src="./assets/images/orange.jpg" alt="Picture of a sliced orange">
+
+    <p>Basic attributes of &lt;img> elements</p>
+    <ul>
+      <li>src - it is reequired. It contains the path of the image.</li>
+      <li>alt - this attribute holds a text descrilpt of the image which serves by rendering when the image cannot be loaded. Again, it help screen readers read the description of image.</li>
+    </ul>
+
+    <p>Other attributes</p>
+    <ul>
+      <li><em>width</em> and <em>height</em> attributes used to set the size of the image and allowing to take up space and mitigate content layout shifts.</li>
+      <li><em>loading</em> attribute determines how the browser will load the image. It has two values as below.
+        <ul>
+          <li>eager - immediately loads the image</li>
+          <li>lazy - Defers the loading the image until it reaches a calculated distance from viewport and hence avoid the network and storage of bandwidth requirement to handle the image until it is reasonable to download. By this way, it helps performance.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>More about &lt;img> will be discussed later.</p>
+
+    <h3>Figure and optional caption : &lt;figure>, &lt;figcaption></h3>
+    <p>The figure element represents a self-contained content, often with an optional caption which is used as &lt;figcaption> element.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>
