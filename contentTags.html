@@ -43,6 +43,63 @@
         font: italic 0.7rem sans-serif;
       }
 
+      .figure {
+        border: thin #c0c0c0 solid;
+        display: flex;
+        flex-flow: column;
+        padding: 5px;
+        max-width: 220px;
+        margin: auto;
+      }
+
+      .img {
+        max-width: 220px;
+        max-height: 150px;
+      }
+
+      .figcaption {
+        background-color: #222;
+        color: #fff;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+      }
+      caption {
+        padding: 10px;
+        caption-side: top;
+      }
+      thead,
+      tfoot {
+        background-color: #3f87a6;
+        color: #fff;
+      }
+
+      tbody {
+        background-color: #e4f0f5;
+      }
+
+      caption {
+        padding: 10px;
+        caption-side: bottom;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        font-size: 0.8rem;
+      }
+
+      td,
+      th {
+        border: 1px solid rgb(190, 190, 190);
+        padding: 5px 10px;
+      }
+
+      td {
+        text-align: center;
+      }
     </style>
     <title>Document</title>
   </head>
@@ -471,9 +528,177 @@
       </li>
     </ul>
     <p>More about &lt;img> will be discussed later.</p>
+    <br><br><br>
+    <hr>
+    <p>August 18, 2023</p>
 
     <h3>Figure and optional caption : &lt;figure>, &lt;figcaption></h3>
-    <p>The figure element represents a self-contained content, often with an optional caption which is used as &lt;figcaption> element.</p>
+    <p>The figure element represents a self-contained content, often with an optional caption which is used as &lt;figcaption> element as a nested element within the tags of the &lt;figure> element.</p>
+    <pre><code>Example:
+      &lt;figure>
+        &lt;img width='660' height='480' src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset" />
+        &lt;figcaption>An elephant at sunset&lt;/figcaption>
+      &lt;/figure>
+    </code></pre>
+    <p>Results:
+      <figure>
+        <img width='660' height='480' src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset" />
+        <figcaption>An elephant at sunset</figcaption>
+      </figure>
+    </p>
+    <p>Figure and figcaption not necessarily associated to img only. Those can be used with other contents.</p>
+
+    <h3>Details element : &lt;details></h3>
+    <p>This element creates a disclosure widget in which information is visition only when the widget is toggled into and "open" state. A summary or label must be provided using the &lt;summary> element.</p>
+    <pre><code>Example:
+      &lt;details>
+        &lt;summary>Details&lt;/summary>
+        Something small enough to escape casual notice.
+      &lt;/details>
+    </code></pre>
+    <p>Results</p>
+    <details>
+      <summary>Details</summary>
+      Something small enough to escape casual notice.
+    </details>
+    <p>Note that, opening the summary element will take vertical space in the document rendered to show the details content.</p>
+
+    <h3>Mark the highlight: &lt;mark></h3>
+    <p>This elements used to highlight certain text. It is an inline-level element</p>
+    <pre><code>Example:
+      &lt;details>
+        &lt;summary>Details of &lt;mark>size&lt;/mark>/summary>
+        Something small enough to escape casual notice.
+      &lt;/details>
+    </code></pre>
+    <p>Results</p>
+    <details>
+      <summary>Details of <mark>size</mark></summary>
+      Something small enough to escape casual notice.
+    </details>
+
+    <h3>Time element: &lt;time></h3>
+    <pre><code>Example:
+      &lt;p>
+        The Cure will be celebrating their 40th anniversary on &lt;time datetime="2018-07-07">July 7&lt;/time> in London's Hyde
+        Park.
+      &lt;/p>
+      
+      &lt;p>
+        The concert starts at &lt;time datetime="20:00">20:00&lt;/time> and you'll be able to enjoy the band for at least
+        &lt;time datetime="PT2H30M">2h 30m&lt;/time>.
+      &lt;/p>
+    </code></pre>
+    <p>Results:</p>
+    <p>
+      The Cure will be celebrating their 40th anniversary on <time datetime="2018-07-07">July 7</time> in London's Hyde
+      Park.
+    </p>
+    
+    <p>
+      The concert starts at <time datetime="20:00">20:00</time> and you'll be able to enjoy the band for at least
+      <time datetime="PT2H30M">2h 30m</time>.
+    </p>
+
+    <h2>Tables : &lt;table>, &lt;thead>, &lt;th>, &lt;tr>, &lt;tbody>, &lt;td>, &lt;tfoot>, &lt;caption></h2>
+    <pre><code>Example:
+      &lt;table>
+        &lt;caption style="caption-side: top;">Some items' expenses&lt;/caption>
+        &lt;thead>
+          &lt;tr>
+            &lt;th>Items&lt;/th>
+            &lt;th scope="col">Expenditure&lt;/th>
+          &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+          &lt;tr>
+            &lt;th scope="row">Donuts&lt;/th>
+            &lt;td>3,000&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;th scope="row">Stationery&lt;/th>
+            &lt;td>18,000&lt;/td>
+          &lt;/tr>
+        &lt;/tbody>
+        &lt;tfoot>
+          &lt;tr>
+            &lt;th scope="row">Totals&lt;/th>
+            &lt;td>21,000&lt;/td>
+          &lt;/tr>
+        &lt;/tfoot>
+      &lt;/table>      
+    </code></pre>
+    <p>Result</p>
+    <table>
+      <caption style="caption-side: top;">Some item's expenses</caption>
+      <thead>
+        <tr>
+          <th>Items</th>
+          <th scope="col">Expenditure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Donuts</th>
+          <td>3,000</td>
+        </tr>
+        <tr>
+          <th scope="row">Stationery</th>
+          <td>18,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Totals</th>
+          <td>21,000</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p style="padding-top: 0; margin-top: 0;">Note: CSS included in the document.</p>
+
+    <h3>Form element : &lt;form></h3>
+    <p>This element represents a document section containing interactive controls for submitting information.</p>
+
+    <!-- Sample form -->
+    <article id="contact">
+      <h4>Contact me</h4>
+      <form action="https://httpbin.org/get" method="get">
+        <fieldset>
+          <legend>Personal info</legend>
+          <p>
+            <label for="firstName">First Name :</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Your First Name" autocomplete="on" required>
+          </p>
+          <p>
+            <label for="lastName">Last Name :</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Your Last Name" autocomplete="on" required>
+          </p>
+          <p>
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Your password" required>
+          </p>
+          <p>
+            <label for="phone">Your Phone number</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Your phone number" required>
+          </p>
+        </fieldset>
+        <button type="submit">Submit - GET</button>
+        <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Submit - POST</button>
+        <button type="reset">Reset</button>
+      </form>
+    </article>
+    
+
+
+    <h2>Semantic tags</h2>
+    <p>Some semantic tags are ..  header, nav, hr, main, footer, ul, ol, section, article, aside, details, summary, time, form</p>
+
+    <h2>Non semantic element: &lt;div>, &lt;span></h2>
+
+    <h2>Helper chrome extensions</h2>
+    <ul>
+      <li>Html5 outliner - Helps to see the structure of html5 document.</li>
+    </ul>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <script>
