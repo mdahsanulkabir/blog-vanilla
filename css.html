@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial</title>
+</head>
+<body>
+    <header>
+        <h1>Tutorial on CSS</h1>
+    </header>
+    <main>
+        <article id="cssBasics">
+            <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+            <p>Like HTML, CSS is not a programming language. It is a style sheet language used to style the HTML elements.</p>
+            <p>For example - below is an example of css ruleset.</p>
+            <pre><code>
+                p {
+                    color: red;
+                }
+            </code></pre>
+            <p>This above code can be used to change the color of the text of a paragraph in to red.</p>
+            <p>Here, p represents the selector, "color: red;" represents the declaration (where, "color" is the property, and "red" is the property value). We can have multiple declarations under a selector.</p>
+            <p>Therefore, we can say that CSS ruleset is a combination of 'selector' and 'declaration'.</p>
+            <p>Within each declarations we need to use semicolon (;). Check below code.</p>
+            <pre><code>
+                p {
+                    color: red;
+                    width: 500px;
+                    border: 1px solid black;
+                }
+            </code></pre>
+            <p>To style multple elements with same ruleset, we can separate multiple selectors with comma (,).</p>
+            <pre><code>
+                p,
+                li,
+                h1 {
+                    color: red;
+                }
+            </code></pre>
+            <h2>CSS syntax</h2>
+            <p>CSS is a rule based language. We define the rules by spcifying groups of styles that are applied to particular elements or groups of elements on the web page. <br>Note: When multiple groups implement rules on an element, <mark><em>specificity</em></mark> come in to place and define which rule should be applied. Specificity will discussed later.</p>
+            <pre><code>Example:
+            h1 {
+                color: red;
+                font-size: 5em;
+            }
+                
+            p {
+                color: black;
+            }
+            </code></pre>
+            <p>Above code presents a stylesheet of two styles. Where, the first style makes all the h1 elements (however, a document supposed to have only one h1 header element) in red color and font size as 5 rem. Second style applies to all paragraph elements and makes those elements in to black color.</p>
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
