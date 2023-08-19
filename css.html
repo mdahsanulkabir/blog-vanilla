@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
     <title>CSS Tutorial</title>
 </head>
 <body>
     <header>
         <h1>Tutorial on CSS</h1>
     </header>
+    <hr>
     <main>
         <article id="cssBasics">
+            <h2>Basics of CSS</h2>
             <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
             <p>Like HTML, CSS is not a programming language. It is a style sheet language used to style the HTML elements.</p>
             <p>For example - below is an example of css ruleset.</p>
@@ -38,7 +44,7 @@
                     color: red;
                 }
             </code></pre>
-            <h2>CSS syntax</h2>
+            <h3>CSS syntax</h3>
             <p>CSS is a rule based language. We define the rules by spcifying groups of styles that are applied to particular elements or groups of elements on the web page. <br>Note: When multiple groups implement rules on an element, <mark><em>specificity</em></mark> come in to place and define which rule should be applied. Specificity will discussed later.</p>
             <pre><code>Example:
             h1 {
@@ -52,9 +58,227 @@
             </code></pre>
             <p>Above code presents a stylesheet of two styles. Where, the first style makes all the h1 elements (however, a document supposed to have only one h1 header element) in red color and font size as 5 rem. Second style applies to all paragraph elements and makes those elements in to black color.</p>
         </article>
+        <hr>
+        <p>August 19, 2023</p>
+        <article id="cssStructure">
+            <h2>CSS Structure</h2>
+            <h3>Method of styling</h3>
+                <p>We can apply to our document in three ways as below.</p>
+                <ol>
+                    <li>External stylesheet</li>
+                    <li>Internal stylesheet</li>
+                    <li>Inline styles</li>
+                </ol>
+                <h4>External Stylesheet</h4>
+                <p>External stylesheet contains the css rules in a separate file with .css extension. This is the most common method to apply the css in our document. We have to use &lt;link> element nested in the &lt;head> element in our document. This external stylesheet can be located in our folder structure or in 3rd party source server.</p>
+                <p>referencing a stylesheet file from our folder structure and linking to our document can be like below.</p>
+                <pre><code class="language-html">
+                    &lt;!doctype html>
+                    &lt;html lang="en-GB">
+                    &lt;head>
+                        &lt;meta charset="utf-8" />
+                        &lt;title>My CSS experiment&lt;/title>
+                        &lt;link rel="stylesheet" href="styles.css" />
+                    &lt;/head>
+                    &lt;body>
+                        &lt;h1>Hello World!&lt;/h1>
+                        &lt;p>This is my first CSS example&lt;/p>
+                    &lt;/body>
+                    &lt;/html>
+                </code></pre>
+                <p>Here the name of the file is 'styles.css' and it is located in the same directory as the document.</p>
+                <p>Generally, we put the stylesheet files in a separate folder named 'styles'. Thus we will link that file to our document as below.</p>
+                <pre><code class="language-html">
+                    &lt;!doctype html>
+                    &lt;html lang="en-GB">
+                    &lt;head>
+                        &lt;meta charset="utf-8" />
+                        &lt;title>My CSS experiment&lt;/title>
+                        &lt;link rel="stylesheet" href="styles/styles.css" />
+                    &lt;/head>
+                    &lt;body>
+                        &lt;h1>Hello World!&lt;/h1>
+                        &lt;p>This is my first CSS example&lt;/p>
+                    &lt;/body>
+                    &lt;/html>
+                </code></pre>
+                <p>Associated rules in that stylesheet file may look like below.</p>
+                <pre><code class="language-css">
+                    /*  styles/styles.css */
+                    h1 {
+                        color: blue;
+                        background-color: yellow;
+                        border: 1px solid black;
+                    }
+                    
+                    p {
+                        color: red;
+                    }
+                </code></pre>
+                <h4>Internal stylesheet</h4>
+                <p>In this method of style, the css rules are placed as nested in the &lt;head, element of the document and wrapped with &lt;style> tags as below.</p>
+                <pre><code class="language-html">
+                    &lt;!doctype html>
+                    &lt;html lang="en-GB">
+                    &lt;head>
+                        &lt;meta charset="utf-8" />
+                        &lt;title>My CSS experiment&lt;/title>
+                        &lt;style>
+                            h1 {
+                                color: blue;
+                                background-color: yellow;
+                                border: 1px solid black;
+                            }
+                            
+                            p {
+                                color: red;
+                            }
+                        &lt;/style>
+                    &lt;/head>
+                    &lt;body>
+                        &lt;h1>Hello World!&lt;/h1>
+                        &lt;p>This is my first CSS example&lt;/p>
+                    &lt;/body>
+                    &lt;/html>
+                </code></pre>
+                <h4>Inline style</h4>
+                <p>In inline style method, the rules are applied directly with the 'style' property of an element. In type of style the 'selector' is not needed as the rule is directed applied to the element. Below is an example of inline style that has same effect as the earlier example.</p>
+                <pre><code class="language-html">
+                    &lt;!doctype html>
+                    &lt;html lang="en-GB">
+                    &lt;head>
+                        &lt;meta charset="utf-8" />
+                        &lt;title>My CSS experiment&lt;/title>
+                        &lt;style>
+                            h1 {
+                                color: blue;
+                                background-color: yellow;
+                                border: 1px solid black;
+                            }
+                            
+                            p {
+                                color: red;
+                            }
+                        &lt;/style>
+                    &lt;/head>
+                    &lt;body>
+                        &lt;h1 style='color: blue; background-color: yellow; border: 1px solid black;'>Hello World!&lt;/h1>
+                        &lt;p style='color: red;'>This is my first CSS example&lt;/p>
+                    &lt;/body>
+                    &lt;/html>
+                </code></pre>
+                <p>All the above three examples will render the document. Like below</p>
+                <div>
+                    <h1 style='color: blue; background-color: yellow; border: 1px solid black;'>Hello World!</h1>
+                    <p style='color: red;'>This is my first CSS example</p>
+                </div>
+
+                <p>Style a document with inline style method is least efficient. Therefore, we will try to style our document with other style methods (where the external style method is most preferred)</p>
+            <h3>Selector</h3>
+            <p>If we style our document with external styling method or internal styling method, we have to use selector. Selector targets the HTML element to style its content. Each CSS rule starts with a selector, or a list of selectors. Below are some valid CSS selectors</p>
+            <pre><code class="language-css">
+                h1
+                a:link
+                .manythings
+                #onething
+                *
+                .box p
+                .box p:first-child
+                h1, h2, .intro
+            </code></pre>
+            <h3>Specificity</h3>
+            <p>Previously, I mentioned that there might me some occations where two selectors may select same HTML element. Below is an example.</p>
+            <pre><code class="language-css">
+                .special {
+                    color: red;
+                }
+                
+                p {
+                    color: blue;
+                }
+            </code></pre>
+            <p>With an element like below</p>
+            <pre><code class="language-html">
+                &lt;p class="special">What color am I?</p>
+            </code></pre>
+            <p>Above, we have a paragraph with a class property named 'special'. p and .special selector sets the text color of the p element differently. Here comes the concept of specificity. Specificity helps us to solve this conflict. CSS has rules to control which selector is stronger in the event of such conflicts. These rules are called <strong>cascade</strong> and <strong>specificity</strong>. Lets render the paragraph.</p>
+            <p style="color: red;">What color am I?</p>
+            <p>The element is styles with red color because the class has more specificity value than the paragraph in this context</p>
+            <p><span style="color: red; font-weight: bold;">Frustration</span> -  Sometimes, CSS might not apply as we expected because something else in the stylesheet has more specificity. Recognizing that more than one rule could apply to an element is the first step in fixing these kinds of issues.</p>
+            <h3>Properties and values</h3>
+            <p>Properties and associated values are the most basic components of CSS. Pair of property and value is called declaration. Multiple declaration applied in a selector is called declaration block. Finally the whole rule including the selector is called CSS Ruleset or CSS rule.</p>
+            <p>Note: If a declaration is invalid, then the browser ignore the declaration without any warning or error.</p>
+            <h3>Functions</h3>
+            <pre><code class="language-css">
+                .box {
+                    padding: 10px;
+                    width: calc(90% - 30px);
+                    background-color: rebeccapurple;
+                    color: white;
+                }
+            </code>
+            <code class="language-css">
+                .box {
+                    margin: 30px;
+                    width: 100px;
+                    height: 100px;
+                    background-color: rebeccapurple;
+                    transform: rotate(0.8turn);
+                }
+            </code></pre>
+            <h3>@rules</h3>
+            <pre>
+                <code class="language-css">
+                    @import "styles2.css";
+                </code>
+                <code class="language-css">
+                    body {
+                        background-color: pink;
+                    }
+                    
+                    @media (min-width: 30em) {
+                        body {
+                            background-color: blue;
+                        }
+                    }
+                </code>
+            </pre>
+            <h3>Shorthands</h3>
+            <p>Some properties like <pre><code class="language-css">font, background, padding, border, and margin</code></pre> are called shorthand properties. This is because shorthand properties set several values in a single line.</p>
+            <p>For example, below one line code - </p>
+            <pre><code class="language-css">
+                padding: 10px 15px 15px 5px;
+            </code></pre>
+            <p>correspons to following four lines of code.</p>
+            <pre><code class="language-css">
+                padding-top: 10px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+                padding-left: 5px;
+            </code></pre>
+            <p>Another example:</p>
+            <pre><code class="language-css">
+                background: red url(bg-graphic.png) 10px 10px repeat-x fixed;
+            </code></pre>
+            <p>Same as..</p>
+            <pre><code class="language-css">
+                background-color: red;
+                background-image: url(bg-graphic.png);
+                background-position: 10px 10px;
+                background-repeat: repeat-x;
+                background-attachment: fixed;
+            </code></pre>
+        </article>
+
     </main>
     <footer>
 
     </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
 </body>
 </html>
