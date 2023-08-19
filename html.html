@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="owner" content="Mohammed Ahsanul Kabir" />
+    <meta name="author" content="Mohammed Ahsanul Kabir" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <title>Ahsan's Blog</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Ahsan's Blog</h1>
+      <hr />
+
+      <section>
+        <p>August 13, 2023</p>
+
+        <h2><string>HTML</string>: HyperText Markup Language</h2>
+        <p>
+          HTML is the basic building block of the web. It defines the skeleton
+          and the meaning of web content. Other technologies are used with HTML
+          to describe the appearance/presentation and functionality of the web
+          contents.
+        </p>
+        <p>
+          From
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN's</a>
+          website we get the idea of <strong>Hypertext</strong> like below:
+        </p>
+        <blockquote>
+          &quot;Hypertext&quot; refers to links that connect web pages to one
+          another, either within a single website or between websites. Links are
+          a fundamental aspect of the Web. By uploading content to the Internet
+          and linking it to pages created by other people, you become an active
+          participant in the World Wide Web.
+        </blockquote>
+        <p>
+          HTML uses &quot;markup&quot;, which includes special elements, which
+          are consists of
+          <span
+            title='consists of element&apos;s name and surrounded by "&lt;" and "&gt;"'
+            ><em>tags</em></span
+          >.
+        </p>
+        <p>
+          Therefore, HTML is the links of annotated texts, images and other
+          contents within single website or between websites.
+        </p>
+
+        <h2>Elements</h2>
+        <p>
+          We know that HTML uses "markup" to annotate text, images and other
+          contents for display in web browser. HTML markup includes special
+          elements like &quot;&lt;head&gt;&quot;, &quot;&lt;p&gt;&quot;,
+          &quot;&lt;img&gt;&quot; etc.
+        </p>
+        <p>Let's checkout how an element is formed</p>
+        <h3>Structure of an Element</h3>
+        <p>
+          Below picture taken from
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+            >MDN</a
+          >
+          website
+        </p>
+        <figure>
+          <img src="/assets/images/element-formation.png" alt="" />
+          <figcaption>Anatomy of an element</figcaption>
+        </figure>
+        <p>
+          From the above picture, we can see that an element has several parts.
+        </p>
+        <ul>
+          <li>
+            Opening tag - or, start tag. It represents the name of the tag
+          </li>
+          <li>
+            Closing tag - or, end tag. Its same as opening tag followed by
+            forward slash
+          </li>
+          <li>Content - It stays between the two tags</li>
+          <aside>
+            Few elements have own closing tags. I.e., they don't have ending
+            tags. These are called void element.
+          </aside>
+        </ul>
+
+        <h3>Nesting of elements</h3>
+        <p>
+          An element can be placed within other elements. For example check
+          below box.
+        </p>
+        <div style="border: 1px solid black">
+          <p>I am very excited to learn coding.</p>
+          <pre>
+        <code>&lt;p&gt;I am very excited to learn coding&lt;/p&gt;</code>
+      </pre>
+          <h6>
+            The whole thing in the box (including) is inside a block named 'div'
+          </h6>
+        </div>
+        <p>
+          If we want to make the word 'very' bold, we can use another element
+          inside this p element.
+        </p>
+        <div style="border: 1px solid black">
+          <pre>
+        <code>&lt;p&gt;I am &lt;strong&gt;very&lt;/strong&gt; excited to learn coding&lt;/p&gt;</code>
+      </pre>
+          <p>I am <strong>very</strong> excited to learn coding.</p>
+        </div>
+        <p>
+          Therefore, nesting an element inside another element is possible. And
+          it is required in many instances to reflect desired output.
+        </p>
+      </section>
+      <br /><br /><br />
+      <hr />
+      <section>
+        <p>August 14, 2023</p>
+        <article>
+          <h3>Attributes of Elements</h3>
+          <p>Elements might have attributes with following syntax.</p>
+          <div style="border: 1px solid black">
+            <pre>
+          <code class="language-html">&lt;p title="This is a tooltip"&gt;I Love Javascript.&lt;/p&gt;</code>
+        </pre>
+            <p title="This is a tooltip">I Love Javascript.</p>
+            <h6>
+              'Title', as an attribute of an element provides a tooltip to show
+              information on hover on the element.
+            </h6>
+          </div>
+
+          <h4>Boolean Attributes</h4>
+          <p>
+            Sometimes attributes have no value. Those are actually boolean types
+            of attributes. Boolean type attributes have generally single value,
+            which is generally same as the attribute name.
+          </p>
+          <div style="border: 1px solid black">
+            <p>Example:</p>
+            <pre> 
+          <code class="language-html">&lt;input type="text" disabled="disabled"></code>
+        </pre>
+            <input type="text" disabled="disabled" />
+          </div>
+        </article>
+        <article>
+          <h2>HTML document structure</h2>
+          <p>Below is a basic structure of HTML document.</p>
+          <pre>
+        <code>&lt;!doctype html>
+&lt;html lang="en-US">
+  &lt;head>
+    &lt;meta charset="utf-8"/>
+    &lt;title>Sample web page&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;p>Sample paragraph&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+      </pre>
+        </article>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;!doctype html></code></pre>
+          <p>
+            - This is a declaration that help us to prevent the browser from
+            switching "quirks mode" while rendering a documnt and make
+            best-effort to follow relevant specifications.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;html>&lt;/html></code></pre>
+          <p>
+            - This elemenet is the root element of this document. It wraps all
+            other elements of the document. 'html' element wraps two main parts
+            named 'head' and 'body'. The attribute, named as 'lang', associated with this <i>html</i> tag, having a value of "en-US" represents the langulage used in this document.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;head>&lt;/head></code></pre>
+          <p>
+            - This element acts as a container for keywords, page decription,
+            links to css style files etc.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;meta>&lt;/meta></code></pre>
+          <p>- .................</p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;title>&lt;/title></code></pre>
+          <p>
+            - This element sets the title of the page. Page title shown in the
+            browser tab.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;body>&lt;/body></code></pre>
+          <p>
+            - Finally, we have the body tag where we put the contents which are visible in the browser.
+          </p>
+        </div>
+      </section>
+
+      <br><br><br>
+      <hr>
+      August 15, 2023
+
+      <section>
+        <h2>Details of <em>head</em> element</h2>
+        <p>The head element is not displayed in the web browser. It contains information such as <i>title</i>, links to <i>css</i>, links to <i>favicons</i>, some other <i>metadata</i>. Browser uses these information to render the HTML document correctly.</p>
+
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;title>&lt;/title></code></pre>
+          <p>
+            - This should not be confused with the h1 element which can serves as the title of the content. The <i>title</i> element inside the <i>head</i> tag serves as a metadata about the document itself. It is visible at the tab of the brower and while we bookmark that page, this <i>title</i> tag content serves as the name of the bookmark.
+          </p>
+        </div>
+        <div style="display: flex; align-items: center">
+          <pre><code class="language-html">&lt;meta>&lt;/meta></code></pre>
+          <p>
+            - The <i>meta</i> tags provide other informations for the browsers like below.
+          </p>
+        </div>
+        <h3>Some common <i>meta</i> tags</h3>
+        <p>Usually meta data written as pair of <i>name</i> or <i>property</i> and a <i>value</i></p>
+
+        <div style="display: grid; grid-template-columns: 1;">
+          <div style="display: flex; align-items: center">
+            <pre><code class="language-html">&lt;meta charset="utf-8" /></code></pre>
+            <p>
+              - This metadata provides the information about the characters used in the document.
+            </p>
+          </div>
+          <div style="display: flex; align-items: center">
+            <pre><code class="language-html">&lt;meta name="author" content="John Doe" /></code></pre>
+            <p>
+              - this metadata provides the author information of the page.
+            </p>
+          </div>
+          <div style="display: flex; align-items: center">
+            <pre><code class="language-html">&lt;meta name="owner" content="Mohammed" /></code></pre>
+            <p>
+              - this metadata provides the owner information of the page.
+            </p>
+          </div>
+          <div style="display: flex; align-items: center">
+            <pre><code class="language-html">&lt;meta name="description" content="This is a sample website" /></code></pre>
+            <p>
+              - this metadata provides the description of the page. It is very important for the SEO. When we search webpage in search engine, this description will be presentated below the title and link of the document.
+            </p>
+          </div>
+        </div>
+        <h3>favicons</h3>
+        <p><i>favicon</i> is the short for 'favorites icons'. Typically it is a square picture of 16-pixel square icon. It is used generally in brower tab, and next to bookmarked page in bookmarks panel.</p>
+        <p>It is saved as a <i>.ico</i> format in the same directory as site's index page. .gif or .png formats also support as favicon.</p>
+        <p>It is added in the &lt;head&gt; block as nested element as below</p>
+        <pre><code class="language-html">&lt;link rel="icon" href="favicon.ico" type="image/x-icon" /></code></pre>
+
+      </section>
+
+      <h3><i>link</i> tags for css and <i>script</i> tags for Javascript will be discussed later.</h3>
+
+      <h3>Body element</h3>
+      <p><i>body</i> element wraps all the contents we want to present in our webpage. Next section will be allocated details of the list of elements we can use to present our content with specific element within the &lt;body&gt;&lt;/body&gt; tags.</p>
+
+      <h3><a href="contentTags.html">Content Tags</a></h3>
+
+      <section>
+        <h2>Testing the web page.</h2>
+        <p>To check our webpage for any error we can got to  <a href="https://validator.w3.org/">Markup Validation Service</a> of W3C. Going to 'Validate by File Upload' and uploading followed by 'Check' can help us the validate our html document.</p>
+      </section>
+      
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
