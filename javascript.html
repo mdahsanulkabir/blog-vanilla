@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <title>Javascript Tutorial</title>
+</head>
+<body>
+    <header>
+        <p>Javascript</p>
+    </header>
+    <main>
+        <h1>Javascript</h1>
+        <p>JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions.</p>
+        <p>JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.</p>
+
+        <section id="addJavascript">
+            <h2>How to add JavaScript to the page?</h2>
+            <p>We can add JavaScript in two ways as below.</p>
+            <ul>
+                <li><span>Internal Javascript - </span><p>We can add JavaScript code with a &lt;script>&lt;/script> element just before closing of the &lt;/head> tag.</p></li>
+                <pre><code class="language-html">
+                    &lt;head>
+                        ...
+                        &lt;script>
+                            // JavaScript goes here
+                        &lt;/script>
+                    &lt;/head>
+                </code></pre>
+                <li><span>External JavaScript - We can save our JavaScript code in separate file with .js extension and use the script tag with a src property mentioning the link of the file.</span><p>.</p></li>
+                <pre><code class="language-html">
+                    &lt;head>
+                        ...
+                        &lt;script src="script.js" defer>&lt;/script>
+                    &lt;/head>
+                </code></pre>
+            </ul>
+            <h3>Script loading strategies</h3>
+        </section>
+    </main>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+</body>
+</html>

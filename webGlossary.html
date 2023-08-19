@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <title>Web Glossary</title>
+</head>
+<body>
+    <h1>Web Glossary</h1>
+    <hr>
+    <p>August 19, 2023</p>
+    <h2>First-class Function</h2>
+    <p>A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.</p>
+    <h3>Assigning a function to a variable</h3>
+    <div style="display: flex;">
+        <pre><code class="language-javascript">
+            const foo = () => {
+                console.log("foobar");
+            };
+            foo(); // Invoke it using the variable
+            // foobar
+        </code></pre>
+        <div>
+            <p>We assigned an Anonymous Function in a Variable, then we used that variable to invoke the function by adding parentheses () at the end.</p>
+        </div>
+    </div>
+
+
+    <h3>Passing a function as an argument</h3>
+    <div style="display: flex;">
+        <pre><code class="language-javascript">
+            function sayHello() {
+                return "Hello, ";
+            }
+            function greeting(helloMessage, name) {
+                console.log(helloMessage() + name);
+            }
+            // Pass `sayHello` as an argument to `greeting` function
+            greeting(sayHello, "JavaScript!");
+            // Hello, JavaScript!
+        </code></pre>
+        <div>
+            <p>We are passing our sayHello() function as an argument to the greeting() function, this explains how we are treating the function as a value.</p>
+        </div>
+    </div>
+
+
+    <h3>Returning a function</h3>
+    <div style="display: flex;">
+        <pre><code class="language-javascript">
+            function sayHello() {
+                return () => {
+                    console.log("Hello!");
+                };
+            }
+        </code></pre>
+        <div>
+            <p>In this example, we are returning a function from another function - We can return a function because functions in JavaScript are treated as values.</p>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+</body>
+</html>
