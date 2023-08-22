@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
     />
     <title>Javascript Tutorial</title>
 </head>
@@ -31,15 +31,38 @@
                         &lt;/script>
                     &lt;/head>
                 </code></pre>
-                <li><span>External JavaScript - We can save our JavaScript code in separate file with .js extension and use the script tag with a src property mentioning the link of the file.</span><p>.</p></li>
+                <li><span>External JavaScript - </span>We can save our JavaScript code in separate file with .js extension and use the script tag with a src property mentioning the link of the file.<p>.</p></li>
                 <pre><code class="language-html">
                     &lt;head>
                         ...
                         &lt;script src="script.js" defer>&lt;/script>
                     &lt;/head>
                 </code></pre>
+                <li><span>Inline JavaScript handlers - </span>some times JavaScript is written inside html like below.</li>
+                <pre><code class="language-javascript"> Javascript
+                    function createParagraph() {
+                        const para = document.createElement("p");
+                        para.textContent = "You clicked the button!";
+                        document.body.appendChild(para);
+                    }
+                </code>
+                <code class="language-html">HTML
+                    &lt;button onclick="createParagraph()">Click me!&lt;/button>
+                </code></pre>
+                However, this is a bad practice. We should use addEventListener in this case as below.
+                <pre><code class="language-javascript">
+                    const buttons = document.querySelectorAll("button");
+                    
+                    for (const button of buttons) {
+                    button.addEventListener("click", createParagraph);
+                    }
+
+                </code></pre>
             </ul>
             <h3>Script loading strategies</h3>
+        </section>
+        <section id="firstExample">
+
         </section>
     </main>
     
